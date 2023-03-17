@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  * Description: prints "\"Programming is like building a multilingual puzzle"
- * Return 0 on Success
+ * Return: 0 on Success
  */
 int main(void)
 {
