@@ -1,6 +1,5 @@
 /*
  * File: 0-isupper.c
- * Auth: Ephrem Abebe
  */
 
 #include "main.h"
