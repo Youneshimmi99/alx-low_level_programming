@@ -2,9 +2,9 @@
 
 /**
  * _strstr - Finds the first occurrence of the substring needle in the string haystack.
+ * 
  * @haystack: Pointer to the string to search.
  * @needle: Pointer to the substring to find.
- *
  * Return: Pointer to the first match or NULL.
  */
 char *_strstr(char *haystack, char *needle)
