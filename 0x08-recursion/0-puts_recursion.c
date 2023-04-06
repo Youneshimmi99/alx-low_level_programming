@@ -8,11 +8,11 @@
  */
 void _puts_recursion(char *s)
 {
-    if (*s == '\0') /* base case */
-    {
-        _putchar('\n'); /* print new line character */
-        return;
-    }
-    _putchar(*s); /* print current character */
-    _puts_recursion(s + 1); /* recursive call for next character */
+       	if (*s == '\0') /* base case */
+	{
+		_putchar('\n'); /* print new line character */
+		return;
+	}
+	_putchar(*s); /* print current character */
+	_puts_recursion(s + 1); /* recursive call for next character */
 }
