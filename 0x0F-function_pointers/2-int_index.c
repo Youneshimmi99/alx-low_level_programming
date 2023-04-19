@@ -5,6 +5,7 @@
  * @arr: pointer to the array of integers
  * @arr_size: number of elements in the array
  * @compare: pointer to the comparison function
+ * Return: If the integer is found, its index in the array. Otherwise, -1
  *
  * This function searches for an integer in an array by applying a comparison
  * function to each element of the array. The comparison function should return
