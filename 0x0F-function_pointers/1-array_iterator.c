@@ -16,11 +16,11 @@ size_t n;
 
 if (arr == NULL || apply_func == NULL)
 {
-    return;
+return;
 }
 
 for (n = 0; n < arr_size; n++)
 {
-    apply_func(arr[n]);
+apply_func(arr[n]);
 }
 }
