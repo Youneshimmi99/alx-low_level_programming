@@ -1,3 +1,5 @@
+#include "3-calc.h"
+
 /**
  * add - Adds two numbers
  * @a: the first number to add
@@ -5,9 +7,9 @@
  *
  * Return: the sum of the two numbers
  **/
-int add(int a, int b)
+int op_add(int a, int b)
 {
-return (a + b);
+	return (a + b);
 }
 
 /**
@@ -17,9 +19,9 @@ return (a + b);
  *
  * Return: the result of the subtraction operation
  **/
-int subtract(int a, int b)
+int op_sub(int a, int b)
 {
-return (a - b);
+	return (a - b);
 }
 
 /**
@@ -29,9 +31,9 @@ return (a - b);
  *
  * Return: the product of the multiplication
  **/
-int multiply(int a, int b)
+int op_mul(int a, int b)
 {
-return (a * b);
+	return (a * b);
 }
 
 /**
@@ -41,9 +43,14 @@ return (a * b);
  *
  * Return: the quotient of the division operation
  **/
-int divide(int a, int b)
+int op_div(int a, int b)
 {
-return (a / b);
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	return (a / b);
 }
 
 /**
@@ -53,7 +60,12 @@ return (a / b);
  *
  * Return: the remainder of the division operation
  **/
-int modulo(int a, int b)
+int op_mod(int a, int b)
 {
-return (a % b);
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	return (a % b);
 }

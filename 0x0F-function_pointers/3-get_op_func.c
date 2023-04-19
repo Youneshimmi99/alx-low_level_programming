@@ -1,6 +1,4 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <string.h>
 
 /**
  * get_operation_function - Finds the function associated with an operator symbol
@@ -12,27 +10,24 @@
  * matching symbol field. If a matching struct is found, the associated operation
  * function is returned. If no matching struct is found, NULL is returned.
  **/
-int (*get_operation_function(char *symbol))(int, int)
+int (*get_op_func(char *symbol))(int, int)
 {
-operation_t operations[] = {
-{"+", add},
-{"-", subtract},
-{"*", multiply},
-{"/", divide},
-{"%", modulo},
-{NULL, NULL}
-};
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i = 0;
 
-int i = 0;
+	while (i < 10)
+	{
+		if (symbol[0] == ops->op[i])
+			break;
+		i++;
+	}
 
-while (operations[i].symbol != NULL)
-{
-if (!strcmp(operations[i].symbol, symbol))
-{
-return (operations[i].operation);
-}
-i++;
-}
-
-return (NULL);
+	return (ops[i / 2].f);
 }

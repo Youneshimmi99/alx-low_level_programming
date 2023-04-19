@@ -1,17 +1,25 @@
 #ifndef _CALC_H_
 #define _CALC_H_
 
-int add(int a, int b);
-int subtract(int a, int b);
-int multiply(int a, int b);
-int divide(int a, int b);
-int modulo(int a, int b);
-int (*get_operation_function(char *symbol))(int, int);
-
+#include <stdlib.h>
+#include <stdio.h>
+/**
+ * struct op - the struct op
+ *
+ * @symbol: operator
+ * @operation: function associated
+ */
 typedef struct op
 {
-char *symbol;
-int (*operation)(int a, int b);
-} operation_t;
+	char *symbol;
+	int (*operation)(int a, int b);
+} op_t;
+
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
+int (*get_op_func(char *s))(int, int);
 
 #endif
