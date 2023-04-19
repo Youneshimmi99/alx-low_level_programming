@@ -1,19 +1,16 @@
 #include "3-calc.h"
 
 /**
- * main - Performs a arithmetic operation on two integers and prints the result
+ * main - Performs arithmetic operation on two integers and prints the result
  * @argc: The number of command-line arguments
  * @argv: An array of strings containing the command-line arguments
- * Return: 0 if the program completes successfully, non-zero otherwise.
  *
- * This program takes three command-line arguments: two integers and an operator
- * symbol. The program then performs the corresponding arithmetic operation on
- * the two integers, and prints the result to standard output.
- **/
+ * Return: 0 if the program completes successfully, non-zero otherwise.
+ */
 int main(int argc, char *argv[])
 {
 	int a, b;
-	int (*op)(int, int);
+	int (*operation)(int, int);
 
 	if (argc != 4)
 	{
@@ -27,9 +24,9 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	op = get_op_func(argv[2]);
+	operation = get_op_func(argv[2]);
 
-	if (op == NULL)
+	if (operation == NULL)
 	{
 		printf("Error\n");
 		exit(99);
@@ -38,6 +35,6 @@ int main(int argc, char *argv[])
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	printf("%d\n", op(a, b));
+	printf("%d\n", operation(a, b));
 	return (0);
 }

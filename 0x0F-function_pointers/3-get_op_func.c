@@ -1,15 +1,11 @@
 #include "3-calc.h"
 
 /**
- * get_operation_function - Finds the function associated with an operator symbol
- * @symbol: a string representing an operator symbol
- * Return: a pointer to the operation function associated with the symbol, or
- * NULL if no matching operation is found.
+ * get_op_func - Find the function associated with operator symbol
+ * @symbol: char operator.
  *
- * This function searches an array of operation_t structs for a struct with a
- * matching symbol field. If a matching struct is found, the associated operation
- * function is returned. If no matching struct is found, NULL is returned.
- **/
+ * Return: a pointer to the operation function associated with the symbol
+ */
 int (*get_op_func(char *symbol))(int, int)
 {
 	op_t ops[] = {

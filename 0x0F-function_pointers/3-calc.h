@@ -4,15 +4,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * struct op - the struct op
+ * struct op - The Struct op
  *
- * @symbol: operator
- * @operation: function associated
+ * @op: operator
+ * @f: function associated
  */
 typedef struct op
 {
-	char *symbol;
-	int (*operation)(int a, int b);
+	char *op;
+	int (*f)(int a, int b);
 } op_t;
 
 int op_add(int a, int b);
