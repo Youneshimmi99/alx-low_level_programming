@@ -1,25 +1,23 @@
 #include "variadic_functions.h"
 
 /**
- * print_strings - prints a list of strings.
- * @delimiter: a string to be printed between the strings.
- *             If NULL, no delimiter is printed.
- * @num_args: the number of strings passed to the function.
- *            If it is 0, the function does nothing.
+ * print_strings - prints a list of strings
+ * @delimiter: string to printe between the strings
+ * @num_args: number of strings passed to the function
  *
- * Return: nothing.
+ * Return: no return.
  */
 void print_strings(const char *delimiter, const unsigned int num_args, ...)
 {
-	va_list arg_list;
+	va_list valist;
+	unsigned int i;
 	char *current_str;
-    unsigned int i;
 
-	va_start(arg_list, num_args);
+	va_start(valist, num_args);
 
 	for (i = 0; i < num_args; i++)
 	{
-		current_str = va_arg(arg_list, char *);
+		current_str = va_arg(valist, char *);
 
 		if (current_str)
 			printf("%s", current_str);
@@ -32,5 +30,5 @@ void print_strings(const char *delimiter, const unsigned int num_args, ...)
 	}
 
 	printf("\n");
-	va_end(arg_list);
+	va_end(valist);
 }
