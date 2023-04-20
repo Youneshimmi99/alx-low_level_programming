@@ -12,17 +12,17 @@
 void print_strings(const char *delimiter, const unsigned int num_args, ...)
 {
 	va_list arg_list;
-	char *str_to_print;
+	char *current_str;
     unsigned int i;
 
 	va_start(arg_list, num_args);
 
 	for (i = 0; i < num_args; i++)
 	{
-		str_to_print = va_arg(arg_list, char *);
+		current_str = va_arg(arg_list, char *);
 
-		if (str_to_print)
-			printf("%s", str_to_print);
+		if (current_str)
+			printf("%s", current_str);
 		else
 			printf("(nil)");
 
