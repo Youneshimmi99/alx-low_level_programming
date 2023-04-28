@@ -11,9 +11,8 @@
 
 size_t print_list(const list_t *head)
 {
-	size_t count;
+	size_t count = 0;
 
-	count = 0;
 	while (head != NULL)
 	{
 		if (head->str == NULL)
