@@ -3,7 +3,7 @@
 /**
 * print_list - Prints elements of linked list
 * @head: Pointer to the head of the list
-* Return: The number of nodes in the list
+* Return: Count number
 */
 
 size_t print_list(const list_t *head)
