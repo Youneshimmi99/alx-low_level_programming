@@ -10,18 +10,17 @@
 
 size_t print_list(const list_t *head)
 {
-const list_t *current = head;
-size_t node_count = 0;
+	size_t node_count;
 
-while (current != NULL)
-{
-if (current->str != NULL)
-printf("[%d] %s\n", current->len, current->str);
-else
-printf("[0] (nil)\n");
-node_count += 1;
-current = current->next;
-}
-
-return (node_count);
+	node_count = 0;
+	while (head != NULL)
+	{
+		if (head->str == NULL)
+			printf("[%d] %s\n", 0, "(nil)");
+		else
+			printf("[%d] %s\n", head->len, head->str);
+		head = head->next;
+		node_count++;
+	}
+	return (node_count);
 }
