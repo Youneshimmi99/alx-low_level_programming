@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * my_startup_func - prints a message before the main function is executed
+ * my_startup_func - prints a message before main is executed
  * Return: Nothing
  */
 
