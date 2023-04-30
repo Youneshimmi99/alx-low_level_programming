@@ -2,7 +2,7 @@
 
 /**
  * find_listint_loop - find loop in linked list.
- * @head: Pointer head of list.
+ * @head: Pointer to head of list.
  *
  * Return: Address of the node where the loop starts.
  */
@@ -11,30 +11,30 @@ listint_t *find_listint_loop(listint_t *head)
 	listint_t *p;
 	listint_t *pre;
 
-	p2 = head;
+	p = head;
 	pre = head;
-	while (head && p2 && p2->next)
+	while (head && p && p->next)
 	{
 		head = head->next;
-		p2 = p2->next->next;
+		p = p->next->next;
 
-		if (head == p2)
+		if (head == p)
 		{
 			head = pre;
-			pre =  p2;
+			pre =  p;
 			while (1)
 			{
-				p2 = pre;
-				while (p2->next != head && p2->next != pre)
+				p = pre;
+				while (p->next != head && p->next != pre)
 				{
-					p2 = p2->next;
+					p = p->next;
 				}
-				if (p2->next == head)
+				if (p->next == head)
 					break;
 
 				head = head->next;
 			}
-			return (p2->next);
+			return (p->next);
 		}
 	}
 
