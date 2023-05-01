@@ -50,5 +50,6 @@ int check_palindrome(char *s, int length)
 int is_palindrome(char *s)
 {
 	int length = get_string_length(s);
+
 	return (check_palindrome(s, length));
 }
