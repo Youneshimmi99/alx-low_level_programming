@@ -1,37 +1,44 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * binary_to_uint - convert given binary number to an
- * unsigned int.
- * @b: binary character.
- *
- * Return: the converted number.
+ * _strlen - calculates the length of a string
+ * @str: pointer to the char
+ * Return: the length of string
+ */
+int _strlen(const char *str)
+{
+	int n = 0, lenght = 0;
+
+	while (str[n] != '\0')
+	{
+		lenght++;
+		n++;
+	}
+	return (lenght);
+}
+
+/**
+ * binary_to_uint - Convert binary to unsigned int
+ * @b: Pointer to binary the number
+ * Return: Converted result
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int ui;
-	int len, base_two;
+	int i, powe = 1;
+	unsigned int sum = 0;
 
-	if (!b)
-		return (0);
-
-	ui = 0;
-
-	for (len = 0; b[len] != '\0'; len++)
-		;
-
-	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
+	for (i = _strlen(b); i > 0; i--)
 	{
-		if (b[len] != '0' && b[len] != '1')
+		if ((b[i - 1] - '0') == 0 || (b[i - 1] - '0') == 1)
+		{
+			sum += (b[i - 1] - '0') * powe;
+			powe *= 2;
+		}
+		else
 		{
 			return (0);
 		}
-
-		if (b[len] & 1)
-		{
-			ui += base_two;
-		}
 	}
-
-	return (ui);
+	return (sum);
 }
