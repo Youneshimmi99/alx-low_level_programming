@@ -6,7 +6,7 @@
  * @n: Number that will be flipped.
  * @m: Number to flip to.
  *
- * Return: Nnumber of bits to flip to get from n to m.
+ * Return: Number of bits to flip to get from n to m.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
