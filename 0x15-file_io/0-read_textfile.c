@@ -5,32 +5,47 @@
  * @filename: the name of file.
  * @letters: number of letters printed.
  *
- * Return: numbers of letters printed. else, returns 0.
+ * Return: numbers of letters printed.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t nrd, nwr;
-	char *buf;
+	char *buff;
+	ssize_t bytes, r;
 
 	if (!filename)
 		return (0);
-
 	fd = open(filename, O_RDONLY);
-
 	if (fd == -1)
+	{
+		close(fd);
 		return (0);
+	}
 
-	buf = malloc(sizeof(char) * (letters));
-	if (!buf)
+	buff = malloc(sizeof(char) * letters);
+	if (!buff)
+	{
+		close(fd);
 		return (0);
+	}
 
-	nrd = read(fd, buf, letters);
-	nwr = write(STDOUT_FILENO, buf, nrd);
+	bytes = read(fd, buff, letters);
 
+	if (bytes == -1)
+	{
+		close(fd);
+		free(buff);
+		return (0);
+	}
+
+	r = write(STDOUT_FILENO, buff, bytes);
+
+	if (r == -1)
+	{
+		close(fd);
+		free(buff);
+		return (0);
+	}
 	close(fd);
-
-	free(buf);
-
-	return (nwr);
+	return (bytes);
 }
