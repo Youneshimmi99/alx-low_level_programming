@@ -5,12 +5,12 @@
  * @filename: the name of the file.
  * @letters: total number of letters printed.
  *
- * Return: numbers of letters printed. if failed returns 0.
+ * Return: number of letters printed. if failed returns 0.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t num_read, num_write;
+	ssize_t nr, nw;
 	char *buf;
 
 	if (!filename)
@@ -25,12 +25,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf)
 		return (0);
 
-	num_read = read(fd, buf, letters);
-	num_write = write(STDOUT_FILENO, buf, num_read);
+	nr = read(fd, buf, letters);
+	nw = write(STDOUT_FILENO, buf, nr);
 
 	close(fd);
 
 	free(buf);
 
-	return (num_write);
+	return (nw);
 }
